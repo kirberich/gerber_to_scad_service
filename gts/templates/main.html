@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+
+{% block body %}
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Upload your gerber files (one for the paste layer and one for the outline), get an STL file.</h3>
+    </div>
+    <div class="panel-body">
+      <p>If you use <strong>eagle</strong>, you can find a CAM script that will export the right layers <a href="https://raw.githubusercontent.com/kirberich/gerber_to_scad/master/export_for_gts.cam">here</a>.
+
+      <p>If you use <strong>Fritzing</strong>, select File -> Export -> For Production -> Extended Gerber and select a directory for the resulting files. Upload the file named <em>your_project_contour.gm1</em> for the outline and <em>your_project_pasteMaskTop.gtp</em> for the paste layer.</p>
+
+      <p>This site is untested, unfinished, unpolished and unlikely to work for anything serious. Good luck.</p>
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">File Upload</h3>
+    </div>
+    <div class="panel-body">
+      <form action="" method="POST" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">
+              Convert to STL
+            </button>
+        {% endbuttons %}
+      </form>
+    </div>
+  </div>
+
+  <br/><br/>
+  <p>If you've got a file that's not working right, send it to me at <a href="mailto:robert@kirberich.de">robert@kirberich.de</a> and I'll have a look to see what's up.
+
+</div>
+{% endblock %}
