@@ -45,12 +45,16 @@
       <li>Some boards can produce 2-dimensional walls if pads directly touch each other, which can throw of slicers. If this happens, increase the hole size very slightly (like 0.001mm) to make the holes overlap.</li>
       <li>The thicker the stencil and the smaller the solder pads, the more paste will stick to the stencil. If you're not getting enough paste on the pads, make the holes bigger or reduce the stencil thickness.</li>
       <li>If you deactivate ledge inclusion, you can still use the "gap between stencil and ledge" option to increase the size of the stencil outside of the board. This might come in useful if you're using a stencil frame or jig.</li>
+      <li>If you've got a file that's not working right, send it to me at <a href="mailto:rob@kirberich.uk">rob@kirberich.uk</a> and I'll have a look to see what's up.</li>
     </ul>
     </div>
   </div>
 
   <br/><br/>
-  <p>If you've got a file that's not working right, send it to me at <a href="mailto:robert@kirberich.de">robert@kirberich.de</a> and I'll have a look to see what's up.</p>
+
+  <p>Special thanks to <a href="https://twitter.com/kazade" target="_blank">kazade</a> for the brilliant idea of using <a href="http://www.openscad.org/" target="_blank">OpenSCAD</a> to make this work. This app uses <a href="https://github.com/curtacircuitos/pcb-tools" target="_blank">pcb-tools</a> to read Gerber files and <a href="https://github.com/SolidCode/SolidPython" target="_blank">SolidPython</a> to generate OpenSCAD code. OpenSCAD is used to generate the resulting STL files. The website is built using <a href="https://www.djangoproject.com/" target="_blank">Django</a>.</p>
+
+  <p>You can find the code for the underlying converter at <a href="https://github.com/kirberich/gerber_to_scad" target="_blank">https://github.com/kirberich/gerber_to_scad</a>. The code for the web app can be found at <a href="https://github.com/kirberich/gerber_to_scad_service" target="_blank">https://github.com/kirberich/gerber_to_scad_service</a>.</p>
 
 </div>
 {% endblock %}
